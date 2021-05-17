@@ -83,7 +83,7 @@
 <br>
 
 ### URI(Uniform Resource Identifier)
-URL(Locator)
+URL(Locator),
 URN(Name)
 
 #### 문법
@@ -95,10 +95,70 @@ URN(Name)
 > - scheme://[userinfo@]host[:port][/path][?query][#fragment] <br>
 > - https://www.google.com:443/search?q=hello&hl=ko 
 
+<br>
+
+### 웹 브라우저 요청 흐름
+<span style="color:red">TODO</span>
 
 <br>
 
 ## HTTP 기본
+
+### 모든 것이 HTTP
+HTML 문서 뿐만 아니라, IMAGE, 음성, 영상 파일, JSON, XML 등 거의 모든 형태의 데이터 전송 가능 <br>
+서버간에 데이터를 주고 받을 때도 대부분 HTTP 사용
+
+#### HTTP 역사
+- HTTP/0.9 : GET 메서드만 지원, HTTP 헤더 X
+- HTTP/1.0 : 메서드, 헤더 추가
+- **_HTTP/1.1 : 대부분의 기능이 들어있고, 가장 많이 사용(가장 중요)❗️_**
+- HTTP/2 : 성능 개선
+- HTTP/3 : TCP 대신에 UDP 사용, 성능 개선
+
+#### 기반 프로토콜
+- HTTP/1.1, HTTP/2 -> TCP 기반
+- HTTP/3 -> UDP 기반 
+<br>
+현재 HTTP/1.1를 주로 사용, HTTP/2, HTTP/3도 점점 증가
+
+#### 웹 페이지에서 프로토콜 확인 
+![protocol](https://github.com/sangminK/study/blob/main/img/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-05-17%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2010.46.05.png)
+
+<br>
+
+### 클라이언트 서버 구조
+- 클라이언트는 서버에 요청을 보내고, 응답을 대기
+- 서버가 요청에 대한 결과를 만들어서 응답
+<table>
+  <tr>
+    <td rowspan="2">클라이언트</td>
+    <td>1.요청 ---> </td>
+    <td rowspan="2">서버</td>
+  </tr>
+  <tr>
+    <td><--- 2.응답 </td>
+  </tr>
+</table>
+
+#### 클라이언트와 서버를 분리하는게 중요한 이유
+- 비즈니스 로직과 데이터는 서버에
+- 클라이언트는 UI와 사용성에 집중
+> ❗️ **각각 독립적으로 진화 가능!!**
+
+<br>
+
+### stateful, stateless
+
+<br>
+
+### 비 연결성
+
+<br>
+
+### HTTP 메시지
+
+<br>
+
 
 ## HTTP 메서드
 
