@@ -211,6 +211,133 @@ HTML 문서 뿐만 아니라, IMAGE, 음성, 영상 파일, JSON, XML 등 거의
 <br>
 
 ### HTTP 메시지
+<table>
+  <tr>
+    <th></th>
+    <th>HTTP 메시지 구조</th>
+    <th>HTTP 요청 메시지</th>
+    <th>HTTP 응답 메시지</th>
+  </tr>
+  <tr>
+    <td>구조</td>
+    <td>
+      <table>
+        <tr>
+          <td>start-line 시작줄 </td>
+        </tr>
+        <tr>
+          <td>header 헤더 <br><br> </td>
+        </tr>     
+        <tr>
+          <td>empty line 공백 라인 (CRLF) </td>
+        </tr>    
+        <tr>
+          <td>message body <br><br> </td>
+        </tr>          
+      </table>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <td><메서드> <요청 URL> <버전> </td>
+        </tr>
+        <tr>
+          <td><헤더> <br><br> </td>
+        </tr>     
+        <tr>
+          <td> <br> </td>
+        </tr>    
+        <tr>
+          <td><엔터티 본문> <br><br> </td>
+        </tr>          
+      </table>    
+    </td>
+    <td>
+      <table>
+        <tr>
+          <td><버전> <상태코드> <사유 구절> </td>
+        </tr>
+        <tr>
+          <td><헤더> <br><br> </td>
+        </tr>     
+        <tr>
+          <td> <br> </td>
+        </tr>    
+        <tr>
+          <td><엔터티 본문> <br><br> </td>
+        </tr>          
+      </table>            
+    </td>
+  </tr>
+  <tr>
+    <td>예시</td>
+    <td></td>
+    <td>
+      <table>
+        <tr>
+          <td>GET /search?q=hello&hl=ko HTTP/1.1 </td>
+        </tr>
+        <tr>
+          <td>Host: www.google.com</td>
+        </tr>     
+        <tr>
+          <td> <br> </td>
+        </tr>        
+      </table>     
+    </td>
+    <td>
+      <table>
+        <tr>
+          <td>HTTP/1.1 200 OK </td>
+        </tr>
+        <tr>
+          <td>
+            Content-Type: text/html; charset=UTF-8 <br> 
+            Content-Length: 3423          
+          </td>
+        </tr>     
+        <tr>
+          <td> <br> </td>
+        </tr>
+        <tr>
+          <td>
+            html...
+          </td>
+        </tr>        
+      </table>     
+    </td>
+  </tr>
+</table>
+
+- 요청 메시지도 body 본문을 가질 수 있음
+- 시작줄만 문법이 다름
+
+#### 메서드
+클라이언트 측에서 서버가 리소스에 대해 수행해주길 바라는 동작('GET', 'HEAD', 'POST')
+
+#### 요청 URL
+요청 대상이 되는 리소스를 지칭하는 완전한 URL 혹은 URL의 경로 구성요소
+
+#### 버전
+이 메시지에서 사용 중인 HTTP의 버전: HTTP/<메이저>.<마이너>
+> 정수로 다루는 것에 주의 : HTTP/2.22 는 HTTP/2.3 보다 크다
+
+#### 상태코드
+요청 중에 무엇이 일어났는지 설명하는 세 자리의 숫자. 각 코드의 첫 번째 자릿수는 상태의 일반적인 분류('성공', '에러' 등)를 나타냄
+
+#### 사유 구절
+숫자로 된 상태 코드의 의미를 사람이 이해할 수 있게 설명해주는 짧은 문구(200 -> OK)
+
+#### 헤더
+- HTTP 전송에 필요한 모든 부가정보
+- body 제외하고 필요한 메타데이터가 다 들어있음
+- 이름, 콜론(:), 선택적인 공백, 값, CRLF(줄바꿈)가 순서대로 나타나는 0개 이상의 헤더들
+> field-name ":" OWS field-value OWS (OWS: 띄어쓰기 허용) <br>
+> (field-name은 대소문자 구분 없음)
+
+#### 엔터티 본문
+실제 전송할 데이터 <br>
+HTML 문서, 이미지, 영상, JSON 등등 byte로 표현할 수 있는 모든 데이터 전송 가능 
 
 <br>
 
