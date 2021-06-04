@@ -98,7 +98,7 @@ URN(Name)
 <br>
 
 ### 웹 브라우저 요청 흐름
-![webflow](https://github.com/sangminK/study/blob/main/img/%E1%84%8B%E1%85%B0%E1%86%B8%20%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%AD%E1%84%8E%E1%85%A5%E1%86%BC%20%E1%84%92%E1%85%B3%E1%84%85%E1%85%B3%E1%86%B7.001.jpeg)
+![webflow](https://github.com/sangminK/study/blob/main/img/%EC%9B%B9%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EC%9A%94%EC%B2%AD%20%ED%9D%90%EB%A6%84.jpeg)
 
 <br>
 
@@ -122,7 +122,7 @@ HTML 문서 뿐만 아니라, IMAGE, 음성, 영상 파일, JSON, XML 등 거의
 현재 HTTP/1.1를 주로 사용, HTTP/2, HTTP/3도 점점 증가
 
 #### 웹 페이지에서 프로토콜 확인 
-![protocol](https://github.com/sangminK/study/blob/main/img/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-05-17%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2010.46.05.png)
+![protocol](https://github.com/sangminK/study/blob/main/img/%EC%9B%B9%20%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%20%ED%99%95%EC%9D%B8.png)
 
 <br>
 
