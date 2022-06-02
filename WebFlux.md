@@ -22,7 +22,11 @@ asynchronous stream processing with non-blocking back pressure <br>
 동기식 명령형 코드에서 블로킹 호출은 호출자를 강제로 기다리게 하는 일종의 back pressure <br>
 논블로킹 코드에선, 프로듀셔 속도가 컨슈머 속도를 압도하지 않도록 이벤트 속도를 제어 
 
-
+##### Reactive API
+- [Reactor](https://github.com/reactor/reactor) 는 스프링 웹플럭스가 선택한 리액티브 라이브러리
+- 리액터는 <code>Mono</code>와 <code>Flux</code> API 타입을 제공
+- 데이터 시퀀스를 0~1개는 <code>Mono</code>, 0~N개는 <code>Flux</code>로 표현할 수 있음
+- 리액터는 리액티브 스트림 라이브러리이기 때문에 모든 연산자는 논블로킹 back pressure를 지원 
 
 ## Spring WebFlux(2)
 
