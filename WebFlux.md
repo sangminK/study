@@ -100,6 +100,32 @@ _WebHandler API_ 는 <code>WebFilter</code> 체인과 <code>WebHandler</code>에
 
 ##### View Resolution
   
+### Annotated Controllers
+```java
+@RestController
+public class HelloController {
+
+    @GetMapping("/hello")
+    public String handle() {
+        return "Hello WebFlux"; // response body에 쓸 String을 리턴
+    }
+}  
+```
+
+##### @Controller  
+
+##### Request Mapping
+
+##### Handler Methods
+[Method Arguments](https://godekdls.github.io/Reactive%20Spring/springwebflux/#method-arguments) <br>
+[Return Values](https://godekdls.github.io/Reactive%20Spring/springwebflux/#return-values)
+  
+  
+  
+  
+  
+  
+  
 ## Spring WebFlux(2)
 
 ## WebClient
