@@ -120,9 +120,13 @@ public class HelloController {
 [Method Arguments](https://godekdls.github.io/Reactive%20Spring/springwebflux/#method-arguments) <br>
 [Return Values](https://godekdls.github.io/Reactive%20Spring/springwebflux/#return-values)
   
+##### Model
   
+##### DataBinder
   
+##### Managing Exceptions
   
+##### Controller Advice
   
   
   
