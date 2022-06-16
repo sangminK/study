@@ -141,6 +141,14 @@ public class HelloController {
 - ```ServletRequest```를 받아 비동기 ```ServerResponse```(i.e. ```Mono<ServerResponse>```)를 리턴하는 함수 
 - 요청, 응답 객체 모두 불변(Immutable)이기 때문에 JDK 8 방식으로 HTTP 요청, 응답에 접근 가능 
 - 어노테이션 프로그래밍 모델로 치면 ```@RequestMapping``` 메소드가 하던 일과 동일 
+- request body는 리액터 ```Flux```나 ```Mono```로 표현 
+- response body는 ```Flux```와 ```Mono```를 포함한 어떤 리액티브 스트림 ```Publisher```든 상관없음 
+
+```java
+// request body를 Mono<String> 또는 Flux<Person>으로 추출
+Mono<String> string = request.bodyToMono(String.class);
+Flux<Person> people = request.bodyToFlux(Person.class);
+```
   
 ##### RouterFunction
 - 요청을 ```Handler Function```에 라우팅 
@@ -148,6 +156,28 @@ public class HelloController {
 - 매칭되는 라우터 펑션이 있으면 핸들러 펑션을 리턴하고 그 외는 비어있는 Mono를 리턴 
 - ```@RequestMapping``` 어노테이션과 동일하지만, 라우터 펑션은 데이터뿐 아니라 행동까지 제공한다는 점이 다름 
   
+> 라우터 펑션은 정해진 순서대로 실행한다. <br>
+> 첫 번째 조건과 일치하지 않으면 두 번째를 실행 <br>
+> 따라서, 구체적인 조건을 앞에 선언해야 <br>
+> 어노테이션 프로그래밍 모델에선 자동으로 가장 구체적인 컨트롤러 메소드를 실행하지만, 함수형 모델에선 그렇지 않다는 점 주의!
+  
+
+### URL Links
+
+### CORS
+
+### Web Security
+
+### View Technologies 
+
+### HTTP Caching
+
+### WebFlux Config
+
+### HTTP/2
+
+
+
   
 ## WebClient
 
