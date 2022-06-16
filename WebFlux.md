@@ -56,6 +56,8 @@ _WebHandler API_ 는 <code>WebFilter</code> 체인과 <code>WebHandler</code>에
 > 어떠한 데이터 스트림이나 신호에 대해, 인코딩이나 디코딩, 혹은 둘 다를 할 수 있는 하드웨어나 소프트웨어를 일컫는다. <br>
 > 또, 이를 위한 알고리즘을 가리키는 용어로도 쓰인다.
 
+
+
 <code>spring-web</code>, <code>spring-core</code> 모듈을 사용하면 리액티브 논블로킹 방식으로 바이트 컨텐츠를 고수준 객체로 직렬화, 역직렬화할 수 있다.
 - <code>Encoder</code>, <code>Decoder</code>는 HTTP와는 관계없는 컨텐츠를 인코딩, 디코딩한다.
 - <code>HttpMessageReader</code>, <code>HttpMessageWriter</code>는 HTTP 메세지를 인코딩, 디코딩한다.
@@ -128,10 +130,25 @@ public class HelloController {
   
 ##### Controller Advice
   
-  
+<br>  
   
 ## Spring WebFlux(2)
-
+### Functional Endpoints
+경량화된 함수형 프로그래밍 모델 지원
+  
+##### HandlerFunction
+- HTTP 요청을 처리
+- ```ServletRequest```를 받아 비동기 ```ServerResponse```(i.e. ```Mono<ServerResponse>```)를 리턴하는 함수 
+- 요청, 응답 객체 모두 불변(Immutable)이기 때문에 JDK 8 방식으로 HTTP 요청, 응답에 접근 가능 
+- 어노테이션 프로그래밍 모델로 치면 ```@RequestMapping``` 메소드가 하던 일과 동일 
+  
+##### RouterFunction
+- 요청을 ```Handler Function```에 라우팅 
+- ```ServletRequest```를 받아 비동기 ```HandlerFunction```(i.e. ```Mono<HandlerFunction>```)을 리턴하는 함수 
+- 매칭되는 라우터 펑션이 있으면 핸들러 펑션을 리턴하고 그 외는 비어있는 Mono를 리턴 
+- ```@RequestMapping``` 어노테이션과 동일하지만, 라우터 펑션은 데이터뿐 아니라 행동까지 제공한다는 점이 다름 
+  
+  
 ## WebClient
 
 ## WebSockets
