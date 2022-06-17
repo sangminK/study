@@ -239,7 +239,7 @@ Map<String, Object> data = Mono.zip(personMono, hobbiesMono, (person, hobbies) -
 > 스프링 MVC나 웹플럭스 컨트롤러에서 ```Flux```나 ```Mono```를 사용한다면 블로킹할 필요없다. <br> 
 > 단순히 컨트롤러 메소드에서 리액티브 타입을 리턴하기만 하면 된다.
   
-  
+<br>  
   
 ## WebSockets
 
