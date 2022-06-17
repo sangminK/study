@@ -176,11 +176,71 @@ Flux<Person> people = request.bodyToFlux(Person.class);
 
 ### HTTP/2
 
-
+<br>
 
   
 ## WebClient
 
+### retrieve()
+response body를 받아 디코딩하는 가장 간단한 메소드 
+```java
+WebClient client = WebClient.create("https://example.org");
+
+Mono<Person> result = client.get()
+      .uri("/persons/{id}", id).accept(MediaType.APPLICATION_JSON)
+      .retrieve() //
+      .bodyToMono(Person.class);
+```
+  
+### exchange()
+ClientResponse에 접근 
+```java  
+Mono<Person> result = client.get()
+      .uri("/persons/{id}", id).accept(MediaType.APPLICATION_JSON)
+      .exchange()
+      .flatMap(response -> response.bodyToMono(Person.class));  
+```  
+  
+### Request Body
+request body는 ```Mono``` 등에 등록한 모든 비동기 타입으로 인코딩할 수 있다.
+```java
+Mono<Person> personMono = ... ;
+
+Mono<Void> result = client.post()
+      .uri("/persons/{id}", id)
+      .contentType(MediaType.APPLICATION_JSON)
+      .body(personMono, Person.class)
+      .retrieve()
+      .bodyToMono(Void.class);  
+```  
+
+### Synchronous Use
+```WebClient```는 마지막에 결과를 블로킹하면 동기로(synchronous) 결과를 가져옴 <br>
+
+API 호출을 여러 번 한다면, 각 응답을 따로 블로킹하기보단 전체 결과를 합쳐서 기다리는 게 더 효율적 
+  
+```java
+Mono<Person> personMono = client.get().uri("/person/{id}", personId)
+      .retrieve().bodyToMono(Person.class);
+
+Mono<List<Hobby>> hobbiesMono = client.get().uri("/person/{id}/hobbies", personId)
+      .retrieve().bodyToFlux(Hobby.class).collectList();
+
+Map<String, Object> data = Mono.zip(personMono, hobbiesMono, (person, hobbies) -> {
+          Map<String, String> map = new LinkedHashMap<>();
+          map.put("person", person);
+          map.put("hobbies", hobbies);
+          return map;
+      })
+      .block();  
+```  
+요청이 끝날 때까지 블로킹하지 않고, 리액티브 파이라인을 구축해서 상호 독립적으로 원격 호출을 여러 번 실행  
+  
+> 스프링 MVC나 웹플럭스 컨트롤러에서 ```Flux```나 ```Mono```를 사용한다면 블로킹할 필요없다. <br> 
+> 단순히 컨트롤러 메소드에서 리액티브 타입을 리턴하기만 하면 된다.
+  
+  
+  
 ## WebSockets
 
 ## Testing
