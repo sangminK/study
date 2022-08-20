@@ -1,5 +1,9 @@
 # study
 
+### 오픈소스 컨트리뷰션
+[TypeScript Handbook 한글화(2020)](https://github.com/sangminK/study/blob/main/typescript.md) <br>
+[Kubernetes 한글화 컨트리뷰션 및 커뮤니티 참여(2022)](https://github.com/sangminK/study/blob/main/Kubernetes.md)
+<br>
 
 ### WebFlux
 [WebFlux](https://github.com/sangminK/study/blob/main/WebFlux.md)
