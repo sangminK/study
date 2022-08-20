@@ -84,4 +84,19 @@ https://github.com/kubernetes/website/blob/main/scripts/diff_l10n_branches.py <b
 
 <br><br>
 
+### 4주차
+
+##### Action Items
+1. CNCF SLACK 워크스페이스 및 채널에 가입하고 최근 대화 살펴보기 <br>
+   a. cloud-native.slack.com <br>
+   b. #glossary / #glossary-localizations / #glossary-localization-korea
+
+2. CNCF Glossary 웹사이트 및 저장소를 살펴보고 컨트리뷰션 일감 찾아보기 <br>
+ a. https://github.com/cncf/glossary <br>
+ b. https://glossary.cncf.io/ <br>
+ c. https://github.com/cncf/glossary/discussions
+
+3. (optional) PR 오픈해보기
+
+
 <hr>
