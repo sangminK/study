@@ -134,6 +134,7 @@ switch (o) {
 > 컴파일 에러 : illegal fall-through to a pattern
 
 <br>
+<br>
 
 ```java
 switch (o) {
@@ -150,6 +151,7 @@ switch (o) {
 ```
 break 없으면 나머지 라벨을 다 실행하기 때문에
 
+<br>
 <br>
 
 > ##### 정리
