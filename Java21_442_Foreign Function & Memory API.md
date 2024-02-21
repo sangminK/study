@@ -11,6 +11,19 @@
 1. Foreign Function Interface (FFI): FFI를 사용하면 자바 코드에서 네이티브 함수를 직접 호출할 수 있습니다. 이를 통해 기존에 작성된 C, C++ 등의 라이브러리를 자바 애플리케이션에서 활용할 수 있습니다. FFI를 통해 자바 코드에서 네이티브 함수를 호출할 때, 메서드 디스크립터와 네이티브 라이브러리의 경로를 지정하여 호출합니다.
 2. Foreign Memory Access (FMA): FMA를 사용하면 자바 애플리케이션에서 외부 메모리에 직접 접근할 수 있습니다. ByteBuffer와 같은 기존 메모리 API와 달리 FMA를 사용하면 네이티브 메모리에 직접 접근할 수 있습니다. 이를 통해 메모리의 저수준 세부 사항을 조작할 수 있습니다.
 
+### 대안 또는 비슷한 역할 
+java.nio.ByteBuffer, sun.misc.Unsafe, JNI(Java Native Interface), 다른 서드파티 프레임워크 
+
+
+<img width="673" alt="image" src="https://github.com/sangminK/study/assets/47021861/5f3600f7-ebe7-478b-b851-827936670260">
+
+##### JNI 문제점
+- Native-first programming model, brittle combination of Java and C
+- Expensive to maintain and deploy
+- Passing data to/from JNI is cumbersome and inefficient
+
+
+
 ### 예제 코드 
 C 언어로 작성된 간단한 네이티브 함수 
 ```c
@@ -81,5 +94,5 @@ public class Main {
 4. 게임 개발: 네이티브 코드를 사용하여 고성능 게임 엔진을 개발하거나, 그래픽 라이브러리를 활용할 수 있습니다. 이를 통해 더욱 현실적이고 높은 성능의 게임을 구현할 수 있습니다.
 5. 빅데이터 및 과학적 컴퓨팅: 네이티브 코드를 사용하여 고성능 컴퓨팅 작업을 수행하거나, 대용량 데이터를 처리할 수 있습니다. 이를 통해 데이터 분석, 시뮬레이션, 모델링 등을 효율적으로 수행할 수 있습니다.
 
-### 대안
-java.nio.ByteBuffer, sun.misc.Unsafe, JNI(Java Native Interface), 다른 서드파티 프레임워크 
+
+
