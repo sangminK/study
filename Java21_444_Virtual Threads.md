@@ -36,3 +36,12 @@
 - https://www.youtube.com/watch?v=srpOD6WIasM
 - https://www.youtube.com/watch?v=vQP6Rs-ywlQ
 - https://d2.naver.com/helloworld/1203723
+
+
+> - 이팩티브 자바
+
+리팩터링 
+https://www.11st.co.kr/products/3405264097?catalog_no=23645489&lowest_yn=Y&trTypeCd=PW51&trCtgrNo=585021
+
+스프링 배치
+https://godekdls.github.io/Spring%20Batch/introduction/#google_vignette
