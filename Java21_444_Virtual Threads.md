@@ -27,7 +27,8 @@ Pinned
 synchronized 블록 : 최소화 (예를 들면, 초기화 코드)
 네이티브 메서드 또는 foreign 함수
 
-
+가장 큰 장점 
+소스를 수정할 필요가 없다 webflux 싫다
 
 
 
