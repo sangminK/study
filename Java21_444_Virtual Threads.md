@@ -21,14 +21,13 @@
 - Synchronized, Native Method 를 지양 -> Avoid Pinning : 캐리어스레드가 대기상태 > virtual thread 도 같이 대기상태
 
 
-Pinned 
-가상스레드가 캐리어 스레드에 고정되는 것 (synchronized 에서 IO 블로킹) -플랫폼 스레드도 같이 블로킹
-두가지 상황에서 발생
-synchronized 블록 : 최소화 (예를 들면, 초기화 코드)
-네이티브 메서드 또는 foreign 함수
+##### Pinning
+- 가상스레드가 캐리어 스레드에 고정되는 것 (synchronized 에서 IO 블로킹) -플랫폼 스레드도 같이 블로킹
+- 두가지 상황에서 발생
+1. synchronized 블록 : 최소화 (예를 들면, 초기화 코드)
+2. JNI 를 통해 네이티브 메서드 사용 또는 foreign 함수
 
-가장 큰 장점 
-소스를 수정할 필요가 없다 webflux 싫다
+##### 가장 큰 장점 : 소스를 수정할 필요가 없다 webflux 러닝커브 싫다
 
 
 
